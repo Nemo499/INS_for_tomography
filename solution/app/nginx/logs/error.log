@@ -1,0 +1,78 @@
+2025/09/23 13:52:46 [error] 18244#5756: *1 CreateFile() "D:\Utilities\nginx-1.29.1/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost"
+2025/09/23 13:52:49 [error] 18244#5756: *3 CreateFile() "D:\Utilities\nginx-1.29.1/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2025/09/23 13:55:38 [notice] 13044#9752: signal process started
+2025/09/23 13:56:59 [notice] 7780#21008: signal process started
+2025/09/23 13:57:41 [notice] 22736#21096: signal process started
+2025/09/23 13:59:11 [notice] 22464#23964: signal process started
+2025/09/23 14:01:41 [notice] 10756#5720: signal process started
+2025/09/23 14:05:13 [notice] 19976#12940: signal process started
+2025/09/23 14:05:51 [error] 6096#2648: *1 CreateFile() "D:\Utilities\nginx-1.29.1/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: sorept, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8008", referrer: "http://localhost:8008/"
+2025/09/23 14:09:34 [notice] 25328#25384: signal process started
+2025/09/23 14:09:37 [error] 22284#23936: *4 directory index of "D:\Utilities\nginx-1.29.1/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8008"
+2025/09/23 14:09:41 [error] 22284#23936: *4 directory index of "D:\Utilities\nginx-1.29.1/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8008"
+2025/09/23 14:10:22 [notice] 22612#23560: signal process started
+2025/09/23 14:10:25 [error] 22284#23936: *5 directory index of "D:\Utilities\nginx-1.29.1/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8008"
+2025/09/23 14:10:26 [error] 22284#23936: *6 directory index of "D:\Utilities\nginx-1.29.1/html/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8008"
+2025/09/23 14:10:26 [crit] 19004#12604: *7 GetFileAttributesEx() "D:\Utilities
+ginx-1.29.1" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8008"
+2025/09/23 14:10:27 [crit] 19004#12604: *8 GetFileAttributesEx() "D:\Utilities
+ginx-1.29.1" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8008"
+2025/09/23 14:10:28 [crit] 19004#12604: *9 GetFileAttributesEx() "D:\Utilities
+ginx-1.29.1" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8008"
+2025/09/23 14:11:24 [notice] 19700#23704: signal process started
+2025/09/23 14:11:26 [crit] 19004#12604: *10 GetFileAttributesEx() "D:\Utilities
+ginx-1.29.1" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8008"
+2025/09/23 14:11:28 [crit] 1468#18044: *11 GetFileAttributesEx() "D:\Utilities
+ginx-1.29.1" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8008"
+2025/09/23 14:11:28 [crit] 1468#18044: *12 GetFileAttributesEx() "D:\Utilities
+ginx-1.29.1" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8008"
+2025/09/23 14:15:55 [notice] 18784#20248: signal process started
+2025/09/23 14:15:57 [crit] 23952#24728: *15 GetFileAttributesEx() "D:\Utilities\nginx-1.29.1/\Utilities
+ginx-1.29.1" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8008"
+2025/09/23 14:16:47 [notice] 12136#10044: signal process started
+2025/09/23 14:16:50 [crit] 23952#24728: *16 GetFileAttributesEx() "D:\Utilities\nginx-1.29.1/\Utilities
+ginx-1.29.1" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8008"
+2025/09/23 14:16:54 [crit] 23952#24728: *17 GetFileAttributesEx() "D:\Utilities\nginx-1.29.1/\Utilities
+ginx-1.29.1" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:8008"
+2025/09/23 14:17:28 [notice] 16420#22364: signal process started
+2025/09/24 19:11:35 [error] 8616#22636: *1 CreateFile() "D:/Utilities/nginx-1.29.1/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8008", referrer: "http://localhost:8008/"
+2025/09/24 19:38:37 [error] 8616#22636: *4 CreateFile() "D:/Utilities/nginx-1.29.1/.well-known/appspecific/com.chrome.devtools.json" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", host: "localhost:8008"
+2025/09/24 19:38:42 [error] 8616#22636: *4 CreateFile() "D:/Utilities/nginx-1.29.1/.well-known/appspecific/com.chrome.devtools.json" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", host: "localhost:8008"
+2025/09/28 12:07:36 [error] 14064#22788: *1 CreateFile() "D:/Utilities/nginx-1.29.1/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8008", referrer: "http://localhost:8008/"
+2025/09/28 12:12:05 [error] 14064#22788: *7 CreateFile() "D:/Utilities/nginx-1.29.1/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8008", referrer: "http://localhost:8008/"
+2025/09/28 12:13:05 [notice] 24572#20548: signal process started
+2025/09/28 12:14:30 [notice] 26520#14872: signal process started
+2025/09/28 12:15:22 [error] 18176#14048: *4 CreateFile() "D:/Utilities/nginx-1.29.1/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8008", referrer: "http://localhost:8008/"
+2025/09/28 12:15:32 [error] 18176#14048: *4 CreateFile() "D:/Utilities/nginx-1.29.1/.well-known/appspecific/com.chrome.devtools.json" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", host: "localhost:8008"
+2025/09/28 12:15:35 [error] 18176#14048: *4 CreateFile() "D:/Utilities/nginx-1.29.1/.well-known/appspecific/com.chrome.devtools.json" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", host: "localhost:8008"
+2025/09/28 12:16:06 [error] 18176#14048: *4 CreateFile() "D:/Utilities/nginx-1.29.1/.well-known/appspecific/com.chrome.devtools.json" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", host: "localhost:8008"
+2025/09/28 12:16:07 [error] 18176#14048: *4 CreateFile() "D:/Utilities/nginx-1.29.1/.well-known/appspecific/com.chrome.devtools.json" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", host: "localhost:8008"
+2025/09/28 12:16:07 [error] 18176#14048: *4 CreateFile() "D:/Utilities/nginx-1.29.1/.well-known/appspecific/com.chrome.devtools.json" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", host: "localhost:8008"
+2025/09/28 12:16:08 [error] 18176#14048: *4 CreateFile() "D:/Utilities/nginx-1.29.1/.well-known/appspecific/com.chrome.devtools.json" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1", host: "localhost:8008"
+2025/09/28 12:18:53 [error] 5988#26936: *4 CreateFile() "D:/Utilities/nginx-1.29.1/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8008", referrer: "http://localhost:8008/"
+2025/09/28 12:22:34 [notice] 23020#18304: signal process started
+2025/09/28 12:22:46 [error] 1996#16088: *7 CreateFile() "D:\Utilities\solution\app\server/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8008", referrer: "http://localhost:8008/"
+2025/09/28 12:25:15 [notice] 2252#10976: signal process started
+2025/09/28 12:34:59 [error] 7848#26556: *10 CreateFile() "D:\Utilities\solution\app\server/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8008"
+2025/09/28 12:53:32 [error] 7848#26556: *12 client intended to send too large body: 5019474 bytes, client: 127.0.0.1, server: localhost, request: "POST /upload HTTP/1.1", host: "localhost:8008", referrer: "http://localhost:8008/"
+2025/09/28 12:58:41 [error] 7848#26556: *17 client intended to send too large body: 5019474 bytes, client: 127.0.0.1, server: localhost, request: "POST /upload HTTP/1.1", host: "localhost:8008", referrer: "http://localhost:8008/"
+2025/09/28 12:58:45 [error] 7848#26556: *18 client intended to send too large body: 5019474 bytes, client: 127.0.0.1, server: localhost, request: "POST /upload HTTP/1.1", host: "localhost:8008", referrer: "http://localhost:8008/"
+2025/09/28 12:58:47 [error] 7848#26556: *19 client intended to send too large body: 5019474 bytes, client: 127.0.0.1, server: localhost, request: "POST /upload HTTP/1.1", host: "localhost:8008", referrer: "http://localhost:8008/"
+2025/09/28 14:00:14 [notice] 27268#2220: signal process started
+2025/09/28 15:41:55 [notice] 9436#24744: signal process started
+2025/09/28 15:43:52 [notice] 3756#18980: signal process started
+2025/09/28 15:51:09 [notice] 21472#23696: signal process started
+2025/09/28 15:53:48 [notice] 14184#19140: signal process started
+2025/09/28 15:55:26 [notice] 14744#13712: signal process started
+2025/09/28 16:03:48 [notice] 28008#22984: signal process started
+2025/09/28 16:03:48 [error] 28008#22984: CreateFile() "D:\Utilities\solution\app\server/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2025/09/28 17:08:57 [notice] 5336#13624: signal process started
+2025/09/28 17:09:04 [notice] 24784#13708: signal process started
+2025/09/28 17:09:04 [error] 24784#13708: CreateFile() "D:\Utilities\solution\app\server/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2025/09/28 17:09:26 [error] 17204#25028: *1 CreateFile() "D:\Utilities\solution\app\server/html/favicon.ico" failed (2: The system cannot find the file specified), client: 100.65.23.179, server: 100.65.23.179, request: "GET /favicon.ico HTTP/1.1", host: "100.65.23.179", referrer: "http://100.65.23.179/"
+2025/09/28 17:09:48 [notice] 26164#21128: signal process started
+2025/09/28 17:14:10 [notice] 9756#17824: signal process started
+2025/09/28 17:14:25 [notice] 18032#18060: signal process started
+2025/09/28 17:14:39 [error] 13348#14628: *3 CreateFile() "D:\Utilities\solution\app\server/html/favicon.ico" failed (2: The system cannot find the file specified), client: 100.65.23.179, server: 100.65.23.179, request: "GET /favicon.ico HTTP/1.1", host: "100.65.23.179", referrer: "http://100.65.23.179/"
+2025/09/28 17:15:00 [error] 13348#14628: *5 CreateFile() "D:\Utilities\solution\app\server/html/favicon.ico" failed (2: The system cannot find the file specified), client: 100.65.23.179, server: 100.65.23.179, request: "GET /favicon.ico HTTP/1.1", host: "100.65.23.179", referrer: "http://100.65.23.179/"
+2025/09/28 17:17:21 [notice] 28568#12832: signal process started

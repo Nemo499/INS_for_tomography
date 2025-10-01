@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- Popup frame -->
+  <style>
+  /* затемнение фона */
+  .overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none; /* скрыт по умолчанию */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* само окно */
+  .popup {
+    background: white;
+    padding: 1.5vw;
+    border-radius: 1.5vw;
+    width: 35vw;
+    text-align: center;
+    font-size: 2vw;
+  }
+
+  .popup button, input{
+    margin-top: 1vw;
+    font-size: 1.2vw;
+  }
+  </style>
+
+
+</head>
+<body>
+
+<button style="font-size: 1.2vw;" onclick="openPopup()">Загрузить изображения</button>
+
+<div class="overlay" id="popupOverlay">
+  <div class="popup">
+    <h2>Загрузка файлов</h2>
+    <p>Выберите архив с изображениями</p>
+
+    <input type="file" id="fileUpload" accept=".zip">
+    <button onclick="uploadFile()">Отправить</button>
+
+    <button onclick="closePopup()">Закрыть</button>
+  </div>
+</div>
+
+<!-- Popup frame script -->
+<script>
+  function openPopup() {
+    document.getElementById("popupOverlay").style.display = "flex";
+  }
+  function closePopup() {
+    document.getElementById("popupOverlay").style.display = "none";
+  }
+</script>
+
+<!-- Load archive -->
+<script>
+async function uploadFile() {
+  const input = document.getElementById("fileUpload");
+  const file = input.files[0];
+
+  if (!file) {
+    alert("Выберите файл!");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("archive", file);
+
+  const response = await fetch("/upload", {
+    method: "POST",
+    body: formData
+  });
+
+  if (response.ok) {
+    alert("Файл загружен успешно!");
+  } else {
+    alert("Ошибка загрузки");
+  }
+}
+</script>
+
+
+</body>
+</html>
