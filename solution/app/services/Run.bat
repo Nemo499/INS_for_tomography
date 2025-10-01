@@ -1,1 +1,1 @@
-.\\venv\python.exe script.py 
+.\\venv\python.exe script.py
