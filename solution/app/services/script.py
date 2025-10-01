@@ -83,21 +83,63 @@ def parseDataFolder(data_folder):
     return file_list
 
 # Импорт набора изображений из директории
-def importImageSet(img_paths, img_size):
-    img_array = np.empty((0, img_size[0], img_size[1], img_size[2]), dtype=np.float32)
-    try:
-        for img_path in img_paths:
-            img = load_image_robust(img_path)
-            img = img.resize(img_size[1:])
-            img = np.array(img).astype(np.float32) / 255.0
-            img = np.transpose(img, (2, 0, 1))
-            img_array = np.append(img_array, [img], axis=0)
+def importImageSet(img_paths, target_size=(3, 224, 224)):
+    """
+    Загружает набор изображений (включая DICOM) и подготавливает их для DenseNet ONNX/PyTorch.
 
-        print(f"Импортировано {len(img_array)} изображений.")
-        return img_array
-    except Exception as e:
-        print("Ошибка загрузки изображений из директории:", e)
+    Args:
+        img_paths (list of str): Пути к изображениям.
+        target_size (tuple): (C, H, W) — размер входа модели.
+
+    Returns:
+        np.ndarray: Массив изображений формы (N, C, H, W), dtype=float32
+    """
+    C, H, W = target_size
+    imgs = []
+
+    mean = np.array([0.485, 0.456, 0.406], dtype=np.float32)
+    std = np.array([0.229, 0.224, 0.225], dtype=np.float32)
+
+    for img_path in img_paths:
+        try:
+            # Загружаем изображение (DICOM или стандартный формат)
+            img = load_image_robust(img_path)
+
+            # Resize: короткая сторона 256, затем CenterCrop 224x224
+            w, h = img.size
+            short_side = 256
+            if w < h:
+                new_w = short_side
+                new_h = int(h * short_side / w)
+            else:
+                new_h = short_side
+                new_w = int(w * short_side / h)
+            img = img.resize((new_w, new_h))
+            left = (new_w - W) // 2
+            top = (new_h - H) // 2
+            img = img.crop((left, top, left + W, top + H))
+
+            # Преобразуем в numpy
+            img = np.array(img).astype(np.float32) / 255.0  # [0,1]
+
+            # Нормализация
+            img = (img - mean) / std
+
+            # HWC -> CHW
+            img = np.transpose(img, (2, 0, 1))
+
+            imgs.append(img)
+        except Exception as e:
+            print(f"Ошибка при обработке {img_path}: {e}")
+
+    if not imgs:
+        print("Не удалось загрузить ни одного изображения.")
         return None
+
+    # Собираем батч
+    img_array = np.stack(imgs, axis=0)
+    print(f"Импортировано {len(img_array)} изображений, размер батча: {img_array.shape}")
+    return img_array
 
 # Запуск модели с входными данными
 def runModel(session, input_data):
