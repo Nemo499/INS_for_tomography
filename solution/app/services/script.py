@@ -96,7 +96,7 @@ def parseDataFolder(data_folder):
         FileNotFoundError: Если в папке нет изображений с поддерживаемыми расширениями
     """
     import glob
-    valid_extensions = ('.dcm', '.jpg', '.jpeg', '.png', '.bmp', '.tiff')
+    valid_extensions = ('','.dcm', '.jpg', '.jpeg', '.png', '.bmp', '.tiff')
     file_list = []
     
     for ext in valid_extensions:
