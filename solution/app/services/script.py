@@ -6,6 +6,7 @@ from sys import argv
 import numpy as np
 import os, shutil, pydicom
 
+
 # Загрузка модели ONNX
 def loadModel(model_path, info = False):
     """
@@ -204,6 +205,7 @@ def runModel(session, input_data):
 
     times = []
     outputs = []
+    confidences = []
     proc_statuses = []
     from time import perf_counter
     for i in range(len(input_data)):
@@ -213,8 +215,14 @@ def runModel(session, input_data):
             output = session.run(None, {input_name: x})
             end = perf_counter()
             
+            out_array = output[0][0]  
+            e_x = np.exp(out_array - np.max(out_array))
+            prob = e_x / e_x.sum()
+            conf = float(np.max(prob))
+
             times.append(end - start)
             outputs.append(output[0][0])
+            confidences.append(conf)
             proc_statuses.append("Success")
             # print(f"Изображение {i+1}/{len(input_data)} обработано за {end - start:.4f} секунд.")
         except Exception as e:
@@ -225,7 +233,7 @@ def runModel(session, input_data):
 
     print("Анализ завершён.")
     print(f"Вывод модели: {len(outputs)} элементов.")
-    return outputs, [times, proc_statuses]
+    return outputs, [times, proc_statuses,confidences]
 
 # Обработка результатов анализа
 def preprocessOutputs(outputs, paths):
@@ -354,18 +362,19 @@ m_pathology_type = "models\densenet_ct.onnx"
 # Основной процесс
 files = parseDataFolder(INPUT_DIR)
 study_uids, series_uids = parse_DICOM_Data(files)
-[not_chest, chest], [times1, statuses1] = main(m_is_chest, files)
+[not_chest, chest], [times1, statuses1, _] = main(m_is_chest, files)
 
 print(f"Не грудные: {len(not_chest)}, Грудные: {len(chest)}")
 chest_or_not = [True if f in chest else False for f in files]
 
-[pathology, norma], [times2, statuses2] = main(m_norm_pathology, chest)
+[pathology, norma], [times2, statuses2,prob] = main(m_norm_pathology, chest)
 print(f"Патология: {len(pathology)}, Норма: {len(norma)}")
 
-[norma_, cap, covid], [times3, statuses3] = main(m_pathology_type, pathology)
-if len(norma_)>0:
-    norma.append(norma_)
-print(f"Норма: {len(norma)}, CAP: {len(cap)}, COVID: {len(covid)}")
+if(len(pathology)>0):
+    [norma_, cap, covid], [times3, statuses3,_] = main(m_pathology_type, pathology)
+    if len(norma_)>0:
+        norma.append(norma_)
+    print(f"Норма: {len(norma)}, CAP: {len(cap)}, COVID: {len(covid)}")
 
 # Составление наборов метаданных
 times = []
@@ -401,7 +410,7 @@ report = {
     "path_to_study": files,
     "study_uid": study_uids,
     "series_uid": series_uids,
-    "probability_of_pathology": ["" for i in files],
+    "probability_of_pathology":prob,
     "pathology": norm_or_not,
     "pathology_type": p_types,
     "processing_status": statuses,
