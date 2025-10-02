@@ -2,4 +2,16 @@ venv/
 .venv/
 env/
 
+# кэш Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE / системное
+.idea/
+.vscode/
+*.log
+
+# локальные файлы
 run.bat
