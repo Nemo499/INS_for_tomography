@@ -1,1 +1,3 @@
-.\\venv\python.exe script.py
+.\\venv\python.exe script.py C:\testData\tt\pneumotorax_anon.zip
+
+pause
