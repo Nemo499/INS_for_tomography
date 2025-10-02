@@ -75,3 +75,7 @@ npm run serve
 - Stop the container: `docker stop <container-name>`
 - Remove the container: `docker rm <container-name>`
 - Rebuild the image: `docker build -t <image-name> .`
+
+### Бета версия сервера
+
+https://drive.google.com/file/d/1F4LgaGCV3jcdIIa1wEJ18za0CiHrzzoD/view?usp=sharing
