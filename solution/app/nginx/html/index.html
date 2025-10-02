@@ -45,7 +45,7 @@
     <h2>Загрузка файлов</h2>
     <p>Выберите архив с изображениями</p>
 
-    <input type="file" id="fileUpload" accept=".zip">
+    <input type="file" id="fileUpload" accept=".zip" enctype="multipart/form-data">
     <button onclick="uploadFile()">Отправить</button>
 
     <button onclick="closePopup()">Закрыть</button>
@@ -76,15 +76,19 @@ async function uploadFile() {
   const formData = new FormData();
   formData.append("archive", file);
 
-  const response = await fetch("/upload", {
-    method: "POST",
-    body: formData
-  });
+  try {
+      const response = await fetch('/api/upload', {
+          method: 'POST',
+          body: formData
+      });
 
-  if (response.ok) {
-    alert("Файл загружен успешно!");
-  } else {
-    alert("Ошибка загрузки");
+      if (response.ok) {
+          alert("Файл загружен успешно!");
+      } else {
+          alert("Ошибка загрузки");
+      }
+  } catch (error) {
+      alert("Ошибка:");
   }
 }
 </script>

@@ -76,3 +76,4 @@ ginx-1.29.1" failed (123: The filename, directory name, or volume label syntax i
 2025/09/28 17:14:39 [error] 13348#14628: *3 CreateFile() "D:\Utilities\solution\app\server/html/favicon.ico" failed (2: The system cannot find the file specified), client: 100.65.23.179, server: 100.65.23.179, request: "GET /favicon.ico HTTP/1.1", host: "100.65.23.179", referrer: "http://100.65.23.179/"
 2025/09/28 17:15:00 [error] 13348#14628: *5 CreateFile() "D:\Utilities\solution\app\server/html/favicon.ico" failed (2: The system cannot find the file specified), client: 100.65.23.179, server: 100.65.23.179, request: "GET /favicon.ico HTTP/1.1", host: "100.65.23.179", referrer: "http://100.65.23.179/"
 2025/09/28 17:17:21 [notice] 28568#12832: signal process started
+2025/10/02 18:29:30 [emerg] 34080#10220: CreateDirectory() "E:\proga7sem\server2\INS_for_tomography\solution\app\nginx/temp/client_body_temp" failed (3: The system cannot find the path specified)

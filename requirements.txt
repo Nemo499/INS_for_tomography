@@ -1,0 +1,6 @@
+onnx
+onnxruntime
+numpy
+pillow
+pydicom
+openpyxl

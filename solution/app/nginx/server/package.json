@@ -1,0 +1,17 @@
+{
+  "name": "app8",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node main"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "express": "^5.1.0",
+    "multer": "^2.0.2"
+  }
+}
